@@ -57,10 +57,10 @@ app.use(xss());
 app.use(hpp({
   whitelist:['duration','ratingsAverage','ratingsQuantity','maxGroupSize','difficulty','price']
 }));
-app.use((req,res,next)=>{
-  console.log(req.cookies);
-  next();
-})
+// app.use((req,res,next)=>{
+//   console.log(req.cookies);
+//   next();
+// })
 
 app.use('/',viewRoter);
 app.use('/api/v1/tours', tourRouter);

@@ -13,7 +13,7 @@ router.use(authController.verifyLogin)
 
 router.patch('/updatePassword',authController.updatePassword);
 
-router.patch('/updateMe',userController.uploadUserPhoto,userController.UpdateMe);
+router.patch('/updateMe',userController.uploadUserPhoto,userController.resizeImage,userController.UpdateMe);
 router.delete('/deleteMe',userController.deleteMe);
 
 router.get('/me',userController.getMe,userController.ViewUser);

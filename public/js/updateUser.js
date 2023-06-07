@@ -18,7 +18,7 @@ const updateData=async (data,url)=>{
             data
         })
         if(upd.data.status==="Success"){
-            showAlert('success',"uDated adata");
+            showAlert('success',"Sucessfully Updated Data");
             window.setTimeout(()=>{
                 location.assign('/me')
             },1500)
@@ -32,13 +32,14 @@ const updateData=async (data,url)=>{
 
 document.querySelector('.form').addEventListener('submit', e =>{
     e.preventDefault();
-    const email=document.getElementById('email').value;
-    const name=document.getElementById('name').value;
-    const data={
-        email,name
-    }
+    const form =new FormData();
+    form.append('name',document.getElementById('name').value);
+    form.append('email',document.getElementById('email').value);
+    form.append('photo',document.getElementById('photo').files[0]);
+    console.log(form);
+
     let url='/api/v1/users/updateMe';
-    updateData(data,url)
+    updateData(form,url);
 });
 document.getElementById('pass').addEventListener('submit', e =>{
     e.preventDefault();
