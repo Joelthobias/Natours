@@ -1,0 +1,10 @@
+# Ignore files with .log extension
+*.log
+
+# Ignore the directory named "node_modules"
+node_modules/
+
+config.env
+dev-data/
+.vscode
+.parcel-cache
